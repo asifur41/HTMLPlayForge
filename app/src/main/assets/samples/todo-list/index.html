@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-do list</title>
+  <style>
+    body { font-family: sans-serif; max-width: 480px; margin: 0 auto; padding: 16px; }
+    .row { display: flex; gap: 8px; }
+    input { flex: 1; padding: 10px; }
+    li { padding: 8px 0; cursor: pointer; }
+    li.done { text-decoration: line-through; color: #888; }
+  </style>
+</head>
+<body>
+  <h2>To-do list</h2>
+  <div class="row">
+    <input id="task" type="text" placeholder="New task">
+    <button id="add">Add</button>
+  </div>
+  <ul id="list"></ul>
+  <script>
+    var list = document.getElementById('list');
+    var input = document.getElementById('task');
+    function addTask() {
+      var text = input.value.trim();
+      if (text === '') return;
+      var li = document.createElement('li');
+      li.textContent = text;
+      li.addEventListener('click', function () { li.classList.toggle('done'); });
+      list.appendChild(li);
+      input.value = '';
+    }
+    document.getElementById('add').addEventListener('click', addTask);
+    input.addEventListener('keydown', function (e) { if (e.key === 'Enter') addTask(); });
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas drawing</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 12px; }
+    canvas { border: 1px solid #888; touch-action: none; max-width: 100%; }
+  </style>
+</head>
+<body>
+  <h3>Draw with your finger</h3>
+  <canvas id="c" width="300" height="300"></canvas>
+  <p><button id="clear">Clear</button></p>
+  <script>
+    var canvas = document.getElementById('c');
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#ffeb3b';
+    ctx.fillRect(10, 10, 80, 80);
+    ctx.strokeStyle = '#6200dd';
+    ctx.lineWidth = 4;
+    ctx.lineCap = 'round';
+    var drawing = false;
+    function pos(e) {
+      var r = canvas.getBoundingClientRect();
+      return { x: (e.clientX - r.left) * canvas.width / r.width, y: (e.clientY - r.top) * canvas.height / r.height };
+    }
+    canvas.addEventListener('pointerdown', function (e) { drawing = true; var p = pos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); });
+    canvas.addEventListener('pointermove', function (e) { if (!drawing) return; var p = pos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); });
+    window.addEventListener('pointerup', function () { drawing = false; });
+    document.getElementById('clear').addEventListener('click', function () { ctx.clearRect(0, 0, canvas.width, canvas.height); });
+  </script>
+</body>
+</html>

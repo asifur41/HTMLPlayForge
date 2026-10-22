@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS animation</title>
+  <style>
+    body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 24px; }
+    .ball { width: 60px; height: 60px; border-radius: 50%; background: #ff5722; animation: bounce 1s ease-in-out infinite; }
+    .spin { width: 80px; height: 80px; background: #6200dd; margin-top: 40px; animation: spin 2s linear infinite; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(80px); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div class="ball"></div>
+  <div class="spin"></div>
+</body>
+</html>

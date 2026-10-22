@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <style>
+    body { font-family: sans-serif; max-width: 480px; margin: 0 auto; padding: 16px; }
+    button { display: block; width: 100%; padding: 12px; margin: 8px 0; font-size: 16px; }
+    .good { background: #a5d6a7; }
+    .bad { background: #ef9a9a; }
+  </style>
+</head>
+<body>
+  <h2 id="q"></h2>
+  <div id="answers"></div>
+  <p id="score"></p>
+  <script>
+    var questions = [
+      { q: 'Which tag makes a link?', a: ['<a>', '<link>', '<url>'], right: 0 },
+      { q: 'Which language styles a page?', a: ['HTML', 'CSS', 'SQL'], right: 1 },
+      { q: 'Which one runs code in the browser?', a: ['JavaScript', 'JSON', 'PNG'], right: 0 }
+    ];
+    var index = 0, score = 0;
+    function show() {
+      var box = document.getElementById('answers');
+      box.innerHTML = '';
+      if (index >= questions.length) {
+        document.getElementById('q').textContent = 'Done!';
+        document.getElementById('score').textContent = 'Your score: ' + score + ' / ' + questions.length;
+        return;
+      }
+      var item = questions[index];
+      document.getElementById('q').textContent = item.q;
+      item.a.forEach(function (text, i) {
+        var b = document.createElement('button');
+        b.textContent = text;
+        b.addEventListener('click', function () {
+          if (i === item.right) { score++; b.className = 'good'; } else { b.className = 'bad'; }
+          index++;
+          setTimeout(show, 600);
+        });
+        box.appendChild(b);
+      });
+    }
+    show();
+  </script>
+</body>
+</html>

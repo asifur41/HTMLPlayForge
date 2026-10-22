@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A form</title>
+  <style>
+    body { font-family: sans-serif; padding: 16px; }
+    label { display: block; margin-top: 12px; }
+    input, select, textarea { width: 100%; padding: 8px; box-sizing: border-box; }
+    button { margin-top: 16px; padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <h2>Contact form</h2>
+  <form id="f">
+    <label>Name <input type="text" id="name" placeholder="Your name" required></label>
+    <label>Email <input type="email" id="email" placeholder="you@example.com"></label>
+    <label>Topic
+      <select id="topic">
+        <option>Question</option>
+        <option>Idea</option>
+      </select>
+    </label>
+    <label>Message <textarea id="msg" rows="4"></textarea></label>
+    <button type="submit">Send</button>
+  </form>
+  <p id="out"></p>
+  <script>
+    document.getElementById('f').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('out').textContent =
+        'Thanks, ' + document.getElementById('name').value + '! (Nothing was sent. This is a demo.)';
+    });
+  </script>
+</body>
+</html>

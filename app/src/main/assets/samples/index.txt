@@ -1,0 +1,15 @@
+hello-page|Hello page
+text-formatting|Text formatting
+links-images|Links and images
+lists-tables|Lists and tables
+simple-form|A form
+css-colors|CSS colors
+flexbox|Flexbox layout
+css-grid|Grid layout
+card-layout|Responsive card layout
+css-animation|CSS animation
+js-counter|JavaScript counter
+todo-list|To-do list
+calculator|Calculator
+canvas-drawing|Canvas drawing
+quiz|Quiz
