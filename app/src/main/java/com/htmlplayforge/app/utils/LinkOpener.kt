@@ -13,10 +13,8 @@ object LinkOpener {
     const val EMAIL = "asifur2580@gmail.com"
     const val RELEASES = "https://github.com/asifur41/HTMLPlayForge/releases/latest"
     const val APK_DOWNLOAD = "https://github.com/asifur41/HTMLPlayForge/releases/latest/download/HTMLPlayForge.apk"
-    /** Temporary value: replace with your community link (for example a Telegram group). */
-    const val COMMUNITY = WEBSITE
-    /** Temporary value: replace with your review link. */
-    const val REVIEW = WEBSITE
+    const val COMMUNITY = "https://whatsapp.com/channel/0029VbE0cq51XquYut1bGi1p"
+    const val REVIEW = "https://asifur-dev.blogspot.com/2026/10/project-2.html?m=1"
 
     const val DEVELOPER_NAME = "Md Asifur Rahman"
     const val COUNTRY = "Bangladesh"

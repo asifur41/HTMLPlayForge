@@ -116,4 +116,6 @@ jobs:
             release-out/HTMLPlayForge.apk.sha256 \
             release-out/TRUST_REPORT.md \
             release-out/SIGNING_CERT.txt \
-            --verify-tag --title "HTMLPlayForge $GITHUB_REF_NAME" --generate-notes
+            --verify-tag --title "HTMLPlayForge $GITHUB_REF_NAME" \
+            --notes "**Install this file: HTMLPlayForge.apk** (direct link: https://github.com/asifur41/HTMLPlayForge/releases/latest/download/HTMLPlayForge.apk). The two Source code items at the bottom are added by GitHub automatically. You do not need them." \
+            --generate-notes

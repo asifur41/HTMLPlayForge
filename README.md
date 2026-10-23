@@ -2,7 +2,7 @@
 
 An offline HTML, CSS and JavaScript editor with live preview for Android.
 
-- Package: `com.htmlplayforge.app`, version 1.0.0, Android 8.0 and newer
+- Package: `com.htmlplayforge.app`, version 1.0.1, Android 8.0 and newer
 - No permissions, no internet access, no trackers, no ads
 - Signed release APK, not minified (the code is readable)
 - Built only by GitHub Actions (`.github/workflows/build-apk.yml`)
